@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: access-model-logs
+spec:
+  containers:
+  - name: access-model-logs
+    image: ubuntu:latest
+    volumeMounts:
+    - mountPath: /trainer-job
+      name: mnist-train
+    args:
+    - "sleep"
+    - "9999"
+  volumes:
+  - name: mnist-train
+    persistentVolumeClaim:
+      claimName: mnist-train
+
