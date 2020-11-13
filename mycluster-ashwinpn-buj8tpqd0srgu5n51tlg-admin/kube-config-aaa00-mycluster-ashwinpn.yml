@@ -1,0 +1,20 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: ca-aaa00-mycluster-ashwinpn.pem
+    server: https://c5.dal12.containers.cloud.ibm.com:21081
+  name: mycluster-ashwinpn/buj8tpqd0srgu5n51tlg
+contexts:
+- context:
+    cluster: mycluster-ashwinpn/buj8tpqd0srgu5n51tlg
+    namespace: default
+    user: admin/buj8tpqd0srgu5n51tlg
+  name: mycluster-ashwinpn/buj8tpqd0srgu5n51tlg/admin
+current-context: mycluster-ashwinpn/buj8tpqd0srgu5n51tlg/admin
+kind: Config
+preferences: {}
+users:
+- name: admin/buj8tpqd0srgu5n51tlg
+  user:
+    client-certificate: admin.pem
+    client-key: admin-key.pem
