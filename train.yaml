@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: trainer-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: mnist-training
+        image: ashwinpn/hw5       
+      
