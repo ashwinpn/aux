@@ -4,11 +4,11 @@ metadata:
   name: infer-model
 spec:
   containers:
-  - name: tensorflow
+  - name: infer-model
     image: ashwinpn/hw5_inference
     volumeMounts:
-    - name: mnist-train
-      mountPath: /trainer-job
+    - mountPath: /trainer-job
+      name: mnist-train
   volumes:
   - name: mnist-train
     persistentVolumeClaim:
