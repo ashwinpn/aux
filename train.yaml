@@ -3,9 +3,14 @@ kind: Pod
 metadata:
   name: trainer-job
 spec:
-  template:
-    spec:
-      containers:
-      - name: mnist-training
-        image: ashwinpn/hw5       
+  containers:
+  - name: mnist-training
+    image: ashwinpn/hw5
+    volumeMounts:
+    - name: model-logs
+      mountPath: /logs
+  volumes:
+    - name: model-logs
+      persistentVolumeClaim:
+        claimName: mnist-train-logs      
       
